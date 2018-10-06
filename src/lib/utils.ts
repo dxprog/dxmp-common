@@ -23,9 +23,9 @@ export function createPerma(text: string): string {
   let chars: Array<string> = text.split('');
 
   // Mostly because I didn't feel like fighting the RegExp
-  chars = chars.filter(char => {
+  text = chars.filter(char => {
     return !PERMA_REMOVE_CHARACTERS_HASH.hasOwnProperty(char);
-  });
+  }).join('');
   text = text.replace(/\s\s/g, ' ').replace(/\s/g, '-');
   return text.toLowerCase();
 }
